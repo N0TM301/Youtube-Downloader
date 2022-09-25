@@ -1,0 +1,21 @@
+from pytube import  YouTube
+
+def download():
+ link = input("Enter a url:")
+ quality = int(input('''Enter the quality u want:
+                        No.18 - 360p
+                        No.22 - 720p
+                        No.137 - 1080p'''))
+
+
+ yt = YouTube(link)
+
+ stream = yt.streams.get_by_itag(quality)
+ try:
+  stream.download("C:\\Users\\Desktop")
+  print("downloading...")
+ except:
+   print("cannot download 60fps vedios")
+
+download()
+
